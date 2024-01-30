@@ -1,7 +1,7 @@
 from kivy.config import Config
 
-Config.set('graphics', 'width', '900')
-Config.set('graphics', 'height', '400')
+Config.set('graphics', 'width', '1800')
+Config.set('graphics', 'height', '1000')
 
 from kivy.app import App
 from kivy.uix.widget import Widget
