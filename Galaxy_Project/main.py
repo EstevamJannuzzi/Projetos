@@ -95,12 +95,12 @@ class MainWidget(RelativeLayout):
         self.sound_music1 = SoundLoader.load('audio/music1.wav')
         self.sound_restart = SoundLoader.load('audio/restart.wav')
 
-        self.sound_music1.volume = 1
-        self.sound_begin.volume = .25
-        self.sound_galaxy.volume = .25
-        self.sound_gameover_voice.volume = .6
-        self.sound_restart.volume = .25
-        self.sound_gameover_impact.volume = .6
+        self.sound_music1.volume = .65
+        self.sound_begin.volume = .15
+        self.sound_galaxy.volume = .15
+        self.sound_gameover_voice.volume = .3
+        self.sound_restart.volume = .15
+        self.sound_gameover_impact.volume = .3
 
 
     def reset_game(self):
