@@ -13,9 +13,9 @@ def calcular_raizes(a, b, c):
         return x1, x2  # Duas raízes reais
 
 # Exemplo de uso
-a = float(input("Digite o valor de a: "))
-b = float(input("Digite o valor de b: "))
-c = float(input("Digite o valor de c: "))
+a = int(input("Digite o valor de a: "))
+b = int(input("Digite o valor de b: "))
+c = int(input("Digite o valor de c: "))
 
 raizes = calcular_raizes(a, b, c)
 if raizes:
