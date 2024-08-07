@@ -1,6 +1,7 @@
 import kivy
 from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.widget import Widget
+from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.togglebutton import ToggleButton
@@ -8,34 +9,70 @@ from kivy.uix.togglebutton import ToggleButton
 
 class Loteria(App):
     def build(self):
-        superBox = BoxLayout(orientation = 'vertical')
-        HB = BoxLayout(orientation = 'horizontal')
+        botao = GridLayout(cols=10, row_force_default=True, row_default_height=50)
 
-        b1 = ToggleButton(text='1', background_color = (1, 0, 1), font_size = 32, size_hint = (0.2, 0.2))
-        b2 = ToggleButton(text='2', background_color = (1, 0, 1), font_size = 32, size_hint = (0.2, 0.2))
-        b3 = ToggleButton(text='3', background_color = (1, 0, 1), font_size = 32, size_hint = (0.2, 0.2))
-        b4 = ToggleButton(text='4', background_color = (1, 0, 1), font_size = 32, size_hint = (0.2, 0.2))
-        b5 = ToggleButton(text='5', background_color = (1, 0, 1), font_size = 32, size_hint = (0.2, 0.2))
-        b6 = ToggleButton(text='6', background_color = (1, 0, 1), font_size = 32, size_hint = (0.2, 0.2))
-        b7 = ToggleButton(text='7', background_color = (1, 0, 1), font_size = 32, size_hint = (0.2, 0.2))
-        b8 = ToggleButton(text='8', background_color = (1, 0, 1), font_size = 32, size_hint = (0.2, 0.2))
-        b9 = ToggleButton(text='9', background_color = (1, 0, 1), font_size = 32, size_hint = (0.2, 0.2))
-        b10 = ToggleButton(text='10', background_color = (1, 0, 1), font_size = 32, size_hint = (0.2, 0.2))
-
-        HB.add_widget(b1)
-        HB.add_widget(b2)
-        HB.add_widget(b3)
-        HB.add_widget(b4)
-        HB.add_widget(b5)
-        HB.add_widget(b6)
-        HB.add_widget(b7)
-        HB.add_widget(b8)
-        HB.add_widget(b9)
-        HB.add_widget(b10)
-
-        superBox.add_widget(HB)
-
-        return superBox
+        botao.add_widget(ToggleButton(text='1'))
+        botao.add_widget(ToggleButton(text='2'))
+        botao.add_widget(ToggleButton(text='3'))
+        botao.add_widget(ToggleButton(text='4'))
+        botao.add_widget(ToggleButton(text='5'))
+        botao.add_widget(ToggleButton(text='6'))
+        botao.add_widget(ToggleButton(text='7'))
+        botao.add_widget(ToggleButton(text='8'))
+        botao.add_widget(ToggleButton(text='9'))
+        botao.add_widget(ToggleButton(text='10'))
+        botao.add_widget(ToggleButton(text='11'))
+        botao.add_widget(ToggleButton(text='12'))
+        botao.add_widget(ToggleButton(text='13'))
+        botao.add_widget(ToggleButton(text='14'))
+        botao.add_widget(ToggleButton(text='15'))
+        botao.add_widget(ToggleButton(text='16'))
+        botao.add_widget(ToggleButton(text='17'))
+        botao.add_widget(ToggleButton(text='18'))
+        botao.add_widget(ToggleButton(text='19'))
+        botao.add_widget(ToggleButton(text='20'))
+        botao.add_widget(ToggleButton(text='21'))
+        botao.add_widget(ToggleButton(text='22'))
+        botao.add_widget(ToggleButton(text='23'))
+        botao.add_widget(ToggleButton(text='24'))
+        botao.add_widget(ToggleButton(text='25'))
+        botao.add_widget(ToggleButton(text='26'))
+        botao.add_widget(ToggleButton(text='27'))
+        botao.add_widget(ToggleButton(text='28'))
+        botao.add_widget(ToggleButton(text='29'))
+        botao.add_widget(ToggleButton(text='30'))
+        botao.add_widget(ToggleButton(text='31'))
+        botao.add_widget(ToggleButton(text='32'))
+        botao.add_widget(ToggleButton(text='33'))
+        botao.add_widget(ToggleButton(text='34'))
+        botao.add_widget(ToggleButton(text='35'))
+        botao.add_widget(ToggleButton(text='36'))
+        botao.add_widget(ToggleButton(text='37'))
+        botao.add_widget(ToggleButton(text='38'))
+        botao.add_widget(ToggleButton(text='39'))
+        botao.add_widget(ToggleButton(text='40'))
+        botao.add_widget(ToggleButton(text='41'))
+        botao.add_widget(ToggleButton(text='42'))
+        botao.add_widget(ToggleButton(text='43'))
+        botao.add_widget(ToggleButton(text='44'))
+        botao.add_widget(ToggleButton(text='45'))
+        botao.add_widget(ToggleButton(text='46'))
+        botao.add_widget(ToggleButton(text='47'))
+        botao.add_widget(ToggleButton(text='48'))
+        botao.add_widget(ToggleButton(text='49'))
+        botao.add_widget(ToggleButton(text='50'))
+        botao.add_widget(ToggleButton(text='51'))
+        botao.add_widget(ToggleButton(text='52'))
+        botao.add_widget(ToggleButton(text='53'))
+        botao.add_widget(ToggleButton(text='54'))
+        botao.add_widget(ToggleButton(text='55'))
+        botao.add_widget(ToggleButton(text='56'))
+        botao.add_widget(ToggleButton(text='57'))
+        botao.add_widget(ToggleButton(text='58'))
+        botao.add_widget(ToggleButton(text='59'))
+        botao.add_widget(ToggleButton(text='60'))
+        
+        return botao
 
 
 Loteria().run()
