@@ -1,4 +1,6 @@
-import kivy
+from kivy.config import Config
+Config.set('graphics', 'width', '350')
+Config.set('graphics', 'height', '500')
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.togglebutton import ToggleButton
