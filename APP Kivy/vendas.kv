@@ -1,10 +1,14 @@
 #:import hex kivy.utils.get_color_from_hex
 
+<Btn@Button>:
+    background_normal: ''
+    background_color: hex('#FFFF00')
 
-<Vendaswindows>:
+
+<VendasWindows>:
     canvas.before:
         Color:
-            rgba: hex('#BA55D3')
+            rgba: hex('#0000FF')
         Rectangle:
             size: self.size
             pos: self.pos
@@ -12,35 +16,74 @@
     
     BoxLayout:
         size_hint_y: .1
+        spacing: .5
         
         Label:
-            size_hint_x: .3
+            id: lbl_bemvindo
+            size_hint_x: .25
             text: 'Seja Bem Vindo: '
+            color: hex('#00FFFF')
+
+        GridLayout:
+            size_hint_x: .25
+            rows: 2
+            cols: 2
+            Label:
+                text: 'Data: '
+                color: hex('#00FFFF')
+            Label:
+                id: data
+                color: hex('#00FFFF')
+            Label:
+                text: 'Hora: '
+                color: hex('#00FFFF')
+            Label:
+                id: hora
+                color: hex('#00FFFF')
         Label:
-            size_hint_x: .4
-            text: 'Data de Hoje'
-        Button:
+            size_hint_x: .2
+            
+
+        Btn:
+            id: admin_btn
             size_hint_x: .15 
             text: 'Administrador'
-        Button:
+            on_release: root.admin()
+
+        Btn:
+            id: sair_btn
             size_hint_x: .15 
             text: 'Sair'
+            on_release: root.sair()
 
     BoxLayout:
         canvas.before:
             Color:
-                rgba: hex('#FA55D3')
+                rgba: hex('#FF8C00')
             Rectangle:
                 size: self.size
                 pos: self.pos
-        size_hint_y: .90
-        
-        Label:
-            text: 'kivy 2'
-        
+        size_hint_y: .85
+          
+        BoxLayout:
+            size_hint_x: .7
+
+            BoxLayout:
+                size_hint_y: .8
+                orientation: 'vertical'
+
+            BoxLayout:
+                size_hint_y: .8
+                orientation: 'vertical'
+
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: hex('#E0FFFF')
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            size_hint_x: .3
+    
     BoxLayout:
-        
-        size_hint_y: .05
-        
-        Label:
-            text: 'kivy 3'
+        size_hint_y: .03
