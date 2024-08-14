@@ -48,7 +48,7 @@ class SelectableLabel(RecycleDataViewBehavior, Label):
         ''' Respond to the selection of items in the view. '''
         self.selected = is_selected
         if is_selected:
-            print("selection changed to {0}".format(rv.data[index]))
+            print("selection changed to {0} ou {1}".format(rv.data[index], 22))
         else:
             print("selection removed for {0}".format(rv.data[index]))
 
