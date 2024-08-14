@@ -23,6 +23,7 @@ produtos = [
 class SelectableRecycleBoxLayout(FocusBehavior, LayoutSelectionBehavior,
                                  RecycleBoxLayout):
     ''' Adds selection and focus behavior to the view. '''
+    touch_deselect_last = BooleanProperty(True)
 
 
 class SelectableLabel(RecycleDataViewBehavior, Label):
@@ -56,7 +57,7 @@ class SelectableLabel(RecycleDataViewBehavior, Label):
 class RV(RecycleView):
     def __init__(self, **kwargs):
         super(RV, self).__init__(**kwargs)
-        self.data = [{'text': str(x)} for x in range(100)]
+        self.data = []
 
 class VendasWindows(BoxLayout):
     def __init__(self, **kwargs):
@@ -65,7 +66,15 @@ class VendasWindows(BoxLayout):
     def add_produto_codigo(self, codigo):
         for produto in produtos:
             if codigo == produto['código']:
-                print('Foi localizado', produto)
+                artigo = {}
+                artigo['código'] = produto['código']
+                artigo['nome'] = produto['nome']
+                artigo['preço'] = produto['preço']
+                artigo['quantidade_carro'] = 1
+                artigo['quantidade_produtos'] = produto['quantidade']
+                artigo['preço_total'] = produto['preço']
+                self.ids.rvs.data.append(artigo)
+
                 break
 
     def add_produto_nome(self, nome):
