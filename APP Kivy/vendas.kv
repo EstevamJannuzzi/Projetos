@@ -20,6 +20,24 @@
             size: self.size
             pos: self.pos
 
+<SelectableLabel>:
+    # Draw a background to indicate selection
+    canvas.before:
+        Color:
+            rgba: (.0, 0.9, .1, .3) if self.selected else (0, 0, 0, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+<RV>:
+    viewclass: 'SelectableLabel'
+    SelectableRecycleBoxLayout:
+        default_size: None, dp(56)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+        multiselect: True
+        touch_multiselect: True
 
 <VendasWindows>:
     canvas.before:
@@ -29,17 +47,14 @@
             size: self.size
             pos: self.pos
     orientation: 'vertical'
-    
     BoxLayout:
         size_hint_y: .1
         spacing: .5
-        
         Label:
             id: lbl_bemvindo
             size_hint_x: .25
             text: 'Seja Bem Vindo: '
             color: hex('#FFFFFF')
-
         GridLayout:
             size_hint_x: .25
             rows: 2
@@ -80,6 +95,7 @@
                 size: self.size
                 pos: self.pos
         size_hint_y: .87
+        spacing: .5
           
         BoxLayout:
             size_hint_x: .7
@@ -93,7 +109,6 @@
 
                 Label_azul:
                     text: 'Pesquisar Por Código'
-                
                 Label_azul:
                     text: 'Pesquisar Por Nome'
                 
@@ -125,13 +140,15 @@
                         text: 'QTD'
                         size_hint_x: .1
                     Label_azul:
-                        text: 'Preço p/ Unid.'
+                        text: 'Preço'
                         size_hint_x: .15
                     Label_azul:
-                        text: 'Valor Total'
+                        text: 'Total'
                         size_hint_x: .15
                 
-                BoxLayout:
+                RV:
+                    id: rvs
+
 
             BoxLayout:
                 size_hint_y: .1
@@ -154,6 +171,58 @@
                     size: self.size
                     pos: self.pos
             size_hint_x: .3
+            orientation: 'vertical'
+
+            GridLayout:
+                canvas.before:
+                    Color:
+                        rgba: hex('#99FFCC')
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                size_hint_y: .4
+                rows: 2
+                cols: 2
+
+                Label_azul:
+                    text:'Sub-Total'
+
+                Label_azul:
+                    id: sub-total
+                    text:'0.00'
+
+                Label_azul:
+                    text:'Total'
+
+                Label_azul:
+                    id: total
+                    text:'0.00'
+
+            BoxLayout:
+                size_hint_y: .6
+                orientation: 'vertical'
+                spacing: .5
+
+                Label_azul:
+                    id: notificacao_falha
+                    size_hint_y: .25
+
+                Label_azul:
+                    id: notificacao_sucesso
+                    size_hint_y: .25
+
+                Btn_verde:
+                    size_hint_y: .25
+                    id: pagar
+                    text: 'Pagar'
+                    on_release: root.pagar()
+
+                Btn_verde:
+                    size_hint_y: .25
+                    id: nova_compra
+                    text: 'Nova Compra'
+                    on_release: root.nova_compra()
+            
     
     BoxLayout:
         size_hint_y: .03
