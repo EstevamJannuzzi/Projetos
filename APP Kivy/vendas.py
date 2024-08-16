@@ -65,14 +65,14 @@ class RV(RecycleView):
 
     def add_artigo(self, artigo):
     	artigo['selecionado']=False
-    	indice=-1
+        indice=-1
     	if self.data:
     		for i in range(len(self.data)):
     			if artigo['codigo']==self.data[i]['codigo']:
     				indice=i
     		if indice >=0:
     			self.data[indice]['quantidade_carrinho']+=1
-    			self.data[indice]['preco_total']=self.data[indice]['preco']*self.data[indice]['quantidade_carrinho']
+    		    self.data[indice]['preco_total']=self.data[indice]['preco']*self.data[indice]['quantidade_carrinho']
     			self.refresh_from_data()
     		else:
 	    		self.data.append(artigo)
