@@ -1,4 +1,4 @@
-#!/home/estevam/Documentos/GitHub/Projetos/teste/bin/python3
+#!/home/estevam/Documentos/GitHub/Projetos/teste/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
