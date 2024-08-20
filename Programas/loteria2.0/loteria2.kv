@@ -1,0 +1,25 @@
+#:import hex kivy.utils.get_color_from_hex
+
+<Lot>:
+    canvas.before:
+		Color:
+			rgba: hex('#11AAFF')
+		Rectangle:
+			size: self.size
+			pos: self.pos
+        orientation: 'vertical'
+
+    BoxLayout:
+        
+        Label:
+            text: 'LOTERIA'
+        
+        GridLayout:
+            cols:3
+
+            Button:
+                text: 'A'
+            Button:
+                text: 'B'
+            Button:
+                text: 'C'
