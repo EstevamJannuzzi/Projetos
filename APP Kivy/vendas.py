@@ -33,13 +33,12 @@ class SelectableBoxLayout(RecycleDataViewBehavior, BoxLayout):
 
     def refresh_view_attrs(self, rv, index, data):
     	self.index = index
-    	self.ids['_has_cod'].text = str(1+index)
-    	self.ids['_artigo_produto'].text = data['nome'].capitalize()
-    	self.ids['_quantidade'].text = str(data['quantidade_carrinho'])
-    	self.ids['_preco_por_produto'].text = str("{:.2f}".format(data['preco']))
-    	self.ids['_preco'].text = str("{:.2f}".format(data['preco_total']))
-    	return super(SelectableBoxLayout, self).refresh_view_attrs(
-            rv, index, data)
+		self.ids['_has_cod'].text = str(1+index)
+		self.ids['_artigo_produto'].text = data['nome'].capitalize()
+		self.ids['_quantidade'].text = str(data['quantidade_carrinho'])
+		self.ids['_preco_por_produto'].text = str("{:.2f}".format(data['preco']))
+		self.ids['_preco'].text = str("{:.2f}".format(data['preco_total']))
+		return super(SelectableBoxLayout, self).refresh_view_attrs(rv, index, data)
 
 
     def on_touch_down(self, touch):
@@ -65,19 +64,19 @@ class RV(RecycleView):
 
     def add_artigo(self, artigo):
     	artigo['selecionado']=False
-        indice=-1
-    	if self.data:
-    		for i in range(len(self.data)):
-    			if artigo['codigo']==self.data[i]['codigo']:
-    				indice=i
-    		if indice >=0:
-    			self.data[indice]['quantidade_carrinho']+=1
-    		    self.data[indice]['preco_total']=self.data[indice]['preco']*self.data[indice]['quantidade_carrinho']
-    			self.refresh_from_data()
-    		else:
-	    		self.data.append(artigo)
-    	else:
-    		self.data.append(artigo)
+		indice=-1
+		if self.data:
+			for i in range(len(self.data)):
+				if artigo['codigo']==self.data[i]['codigo']:
+					indice=i
+			if indice >=0:
+				self.data[indice]['quantidade_carrinho']+=1
+				self.data[indice]['preco_total']=self.data[indice]['preco']*self.data[indice]['quantidade_carrinho']
+				self.refresh_from_data()
+			else:
+				self.data.append(artigo)
+		else:
+			self.data.append(artigo)
 
 
 class VendasWindow(BoxLayout):
