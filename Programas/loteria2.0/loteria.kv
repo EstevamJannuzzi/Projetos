@@ -1,6 +1,6 @@
 #:import hex kivy.utils.get_color_from_hex
 
-<Btn@ToggleButton>:
+<Btn@Button>:
     background_normal: ''
     background_color: hex('#F28800')
 
@@ -20,7 +20,10 @@
             text: 'LOTERIA'
 
         GridLayout:
-            cols: 1
+            cols: 2
+
+            Label:
+                text: 'Números Escolhidos:'
 
             Label:
                 id: escolhas
@@ -30,16 +33,13 @@
             cols: 3
 
             Btn:
-                id: um
                 text:'1'
                 on_release: root.um()
 
             Btn:
-                id: dois
                 text:'2'
                 on_release: root.dois()
 
             Btn:
-                id: tres
                 text:'3'
                 on_release: root.tres()
