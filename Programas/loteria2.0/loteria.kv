@@ -1,0 +1,264 @@
+#:import hex kivy.utils.get_color_from_hex
+
+<Btn@ToggleButton>:
+    background_normal: ''
+    background_color: hex('#F28800')
+
+
+<Lotery>:
+    canvas.before:
+		Color:
+			rgba: hex('#0059A5')
+		Rectangle:
+			size: self.size
+			pos: self.pos
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: 'LOTERIA'
+
+        GridLayout:
+            cols: 10
+
+            Btn:
+                id: um
+                text:'1'
+                on_release: root.um()
+
+            Btn:
+                id: dois
+                text:'2'
+
+            Btn:
+                id: tres
+                text:'3'
+            
+            Btn:
+                id: quatro
+                text:'4'
+
+            Btn:
+                id: cinco
+                text:'5'
+
+            Btn:
+                id: seis
+                text:'6'
+
+            Btn:
+                id: sete
+                text:'7'
+
+            Btn:
+                id: oito
+                text:'8'
+
+            Btn:
+                id: nove
+                text:'9'
+
+            Btn:
+                id: dez
+                text:'10'
+            
+            Btn:
+                id: onze
+                text:'11'
+
+            Btn:
+                id: doze
+                text:'12'
+
+            Btn:
+                id: trese
+                text:'13'
+            
+            Btn:
+                id: quatorze
+                text:'14'
+
+            Btn:
+                id: quinze
+                text:'15'
+
+            Btn:
+                id: dezesseis
+                text:'16'
+
+            Btn:
+                id: dezessete
+                text:'17'
+
+            Btn:
+                id: dezoito
+                text:'18'
+
+            Btn:
+                id: dezenove
+                text:'19'
+
+            Btn:
+                id: vinte
+                text:'20'
+
+            Btn:
+                id: vinteum
+                text:'21'
+
+            Btn:
+                id: vintedois
+                text:'22'
+
+            Btn:
+                id: vintetres
+                text:'23'
+            
+            Btn:
+                id: vintequatro
+                text:'24'
+
+            Btn:
+                id: vintecinco
+                text:'25'
+
+            Btn:
+                id: vinteseis
+                text:'26'
+
+            Btn:
+                id: vintesete
+                text:'27'
+
+            Btn:
+                id: vinteoito
+                text:'28'
+
+            Btn:
+                id: vintenove
+                text:'29'
+
+            Btn:
+                id: trinta
+                text:'30'
+
+            Btn:
+                id: trintaum
+                text:'31'
+
+            Btn:
+                id: trintadois
+                text:'32'
+
+            Btn:
+                id: trintatres
+                text:'33'
+            
+            Btn:
+                id: trintaquatro
+                text:'34'
+
+            Btn:
+                id: trintacinco
+                text:'35'
+
+            Btn:
+                id: trintaseis
+                text:'36'
+
+            Btn:
+                id: trintasete
+                text:'37'
+
+            Btn:
+                id: trintaoito
+                text:'38'
+
+            Btn:
+                id: trintanove
+                text:'39'
+
+            Btn:
+                id: quarenta
+                text:'40'
+
+            Btn:
+                id: quarentaum
+                text:'41'
+
+            Btn:
+                id: quarentadois
+                text:'42'
+
+            Btn:
+                id: quarentatres
+                text:'43'
+            
+            Btn:
+                id: quarentaquatro
+                text:'44'
+
+            Btn:
+                id: quarentacinco
+                text:'45'
+
+            Btn:
+                id: quarentaseis
+                text:'46'
+
+            Btn:
+                id: quarentasete
+                text:'47'
+
+            Btn:
+                id: quarentaoito
+                text:'48'
+
+            Btn:
+                id: quarentanove
+                text:'49'
+
+            Btn:
+                id: cinquenta
+                text:'50'
+
+            Btn:
+                id: cinquentaum
+                text:'51'
+
+            Btn:
+                id: cinquentadois
+                text:'52'
+
+            Btn:
+                id: cinquentatres
+                text:'53'
+            
+            Btn:
+                id: cinquentaquatro
+                text:'54'
+
+            Btn:
+                id: cinquentacinco
+                text:'55'
+
+            Btn:
+                id: cinquentaseis
+                text:'56'
+
+            Btn:
+                id: cinquentasete
+                text:'57'
+
+            Btn:
+                id: cinquentaoito
+                text:'58'
+
+            Btn:
+                id: cinquentanove
+                text:'59'
+
+            Btn:
+                id: sessenta
+                text:'60'

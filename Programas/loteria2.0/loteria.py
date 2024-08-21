@@ -2,76 +2,20 @@ from kivy.config import Config
 Config.set('graphics', 'width', '350')
 Config.set('graphics', 'height', '500')
 from kivy.app import App
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.togglebutton import ToggleButton
+from kivy.uix.boxlayout import BoxLayout
+
+class Lotery(BoxLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def um(self):
+        print('um')
 
 
 class Loteria(App):
     def build(self):
-        botao = GridLayout(cols=10, row_force_default=True, row_default_height=50)
+        return Lotery()
+    
 
-        botao.add_widget(ToggleButton(text='1'))
-        botao.add_widget(ToggleButton(text='2'))
-        botao.add_widget(ToggleButton(text='3'))
-        botao.add_widget(ToggleButton(text='4'))
-        botao.add_widget(ToggleButton(text='5'))
-        botao.add_widget(ToggleButton(text='6'))
-        botao.add_widget(ToggleButton(text='7'))
-        botao.add_widget(ToggleButton(text='8'))
-        botao.add_widget(ToggleButton(text='9'))
-        botao.add_widget(ToggleButton(text='10'))
-        botao.add_widget(ToggleButton(text='11'))
-        botao.add_widget(ToggleButton(text='12'))
-        botao.add_widget(ToggleButton(text='13'))
-        botao.add_widget(ToggleButton(text='14'))
-        botao.add_widget(ToggleButton(text='15'))
-        botao.add_widget(ToggleButton(text='16'))
-        botao.add_widget(ToggleButton(text='17'))
-        botao.add_widget(ToggleButton(text='18'))
-        botao.add_widget(ToggleButton(text='19'))
-        botao.add_widget(ToggleButton(text='20'))
-        botao.add_widget(ToggleButton(text='21'))
-        botao.add_widget(ToggleButton(text='22'))
-        botao.add_widget(ToggleButton(text='23'))
-        botao.add_widget(ToggleButton(text='24'))
-        botao.add_widget(ToggleButton(text='25'))
-        botao.add_widget(ToggleButton(text='26'))
-        botao.add_widget(ToggleButton(text='27'))
-        botao.add_widget(ToggleButton(text='28'))
-        botao.add_widget(ToggleButton(text='29'))
-        botao.add_widget(ToggleButton(text='30'))
-        botao.add_widget(ToggleButton(text='31'))
-        botao.add_widget(ToggleButton(text='32'))
-        botao.add_widget(ToggleButton(text='33'))
-        botao.add_widget(ToggleButton(text='34'))
-        botao.add_widget(ToggleButton(text='35'))
-        botao.add_widget(ToggleButton(text='36'))
-        botao.add_widget(ToggleButton(text='37'))
-        botao.add_widget(ToggleButton(text='38'))
-        botao.add_widget(ToggleButton(text='39'))
-        botao.add_widget(ToggleButton(text='40'))
-        botao.add_widget(ToggleButton(text='41'))
-        botao.add_widget(ToggleButton(text='42'))
-        botao.add_widget(ToggleButton(text='43'))
-        botao.add_widget(ToggleButton(text='44'))
-        botao.add_widget(ToggleButton(text='45'))
-        botao.add_widget(ToggleButton(text='46'))
-        botao.add_widget(ToggleButton(text='47'))
-        botao.add_widget(ToggleButton(text='48'))
-        botao.add_widget(ToggleButton(text='49'))
-        botao.add_widget(ToggleButton(text='50'))
-        botao.add_widget(ToggleButton(text='51'))
-        botao.add_widget(ToggleButton(text='52'))
-        botao.add_widget(ToggleButton(text='53'))
-        botao.add_widget(ToggleButton(text='54'))
-        botao.add_widget(ToggleButton(text='55'))
-        botao.add_widget(ToggleButton(text='56'))
-        botao.add_widget(ToggleButton(text='57'))
-        botao.add_widget(ToggleButton(text='58'))
-        botao.add_widget(ToggleButton(text='59'))
-        botao.add_widget(ToggleButton(text='60'))
-        
-        return botao
-
-
-Loteria().run()
+if __name__=='__main__':
+    Loteria().run()
