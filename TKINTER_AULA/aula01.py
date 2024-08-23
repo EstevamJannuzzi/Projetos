@@ -1,15 +1,47 @@
 from tkinter import *
 from tkinter import ttk
+import sqlite3
 
 root = Tk()
 
-class Aplication():
+class Funcs():
+    def limpa_tela(self):
+        self.codigo_entry.delete(0, END)
+        self.nome_entry.delete(0, END)
+        self.telefone_entry.delete(0, END)
+        self.cidade_entry.delete(0, END)
+
+    def conecta_bd(self):
+        self.conn = sqlite3.connect('clientes.bd')
+        self.cursor = self.conn.cursor(); print('Conectando ao banco de dados')
+
+    def desconecta_bd(self):
+        self.conn.close(); print('Desconectando ao banco de dados')
+
+    def montaTabelas(self):
+        self.conecta_bd(); print('Conectando ao banco de dados')
+
+        # Criar Tabela
+
+        self.cursor.execute('''
+                            CREATE TABLE IF NOT EXISTS clientes (
+                            cod INTEGER PRIMARY KEY,
+                            nome_cliente CHAR (40) NOT NULL,
+                            telefone INTEGER(20),
+                            cidade CHAR(40)
+                            );
+                            ''')
+        self.conn.commit(); print('Banco de dados criado')
+        self.desconecta_bd()
+
+class Aplication(Funcs):
     def __init__(self):
         self.root = root
         self.tela()
         self.frames_de_tela()
         self.widgets_frame_1()
         self.lista_frame_2()
+        self.montaTabelas()
         root.mainloop()
     
     def tela(self):
@@ -28,7 +60,7 @@ class Aplication():
 
     def widgets_frame_1(self):
         # Botões
-        self.bt_limpar = Button(self.frame_1, text= 'Limpar', bd=2, bg= '#107bd2', fg= '#FFFFFF', font= ('verdana', 8, 'bold'))
+        self.bt_limpar = Button(self.frame_1, text= 'Limpar', bd=2, bg= '#107bd2', fg= '#FFFFFF', font= ('verdana', 8, 'bold'), command= self.limpa_tela)
         self.bt_limpar.place(relx=0.2, rely=0.1, relwidth=0.1, relheight=0.15)
 
         self.bt_buscar = Button(self.frame_1, text= 'Buscar', bd=2, bg= '#107bd2', fg= '#FFFFFF', font= ('verdana', 8, 'bold'))
