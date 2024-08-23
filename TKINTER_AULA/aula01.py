@@ -34,6 +34,28 @@ class Funcs():
         self.conn.commit(); print('Banco de dados criado')
         self.desconecta_bd()
 
+    def add_cliente(self):
+        self.codigo = self.codigo_entry.get()
+        self.nome = self.nome_entry.get()
+        self.telefone = self.telefone_entry.get()
+        self.cidade = self.cidade_entry.get()
+        self.conecta_bd()
+
+        self.cursor.execute(""" INSERT INTO clientes (nome_cliente, telefone, cidade) VALUES (?, ?, ?)""", (self.nome, self.telefone, self.cidade))
+        self.conn.commit()
+        self.desconecta_bd()
+        self.select_lista()
+        self.limpa_tela()
+
+    def select_lista(self):
+        self.listaCLI.delete(*self.listaCLI.get_children())
+        self.conecta_bd()
+        lista = self.cursor.execute(""" SELECT cod, nome_cliente, telefone, cidade FROM clientes ORDER BY nome_cliente ASC; """)
+        for i in lista:
+            self.listaCLI.insert('', END, values=i)
+        self.desconecta_bd()
+
+
 class Aplication(Funcs):
     def __init__(self):
         self.root = root
@@ -42,6 +64,7 @@ class Aplication(Funcs):
         self.widgets_frame_1()
         self.lista_frame_2()
         self.montaTabelas()
+        self.select_lista()
         root.mainloop()
     
     def tela(self):
@@ -66,7 +89,7 @@ class Aplication(Funcs):
         self.bt_buscar = Button(self.frame_1, text= 'Buscar', bd=2, bg= '#107bd2', fg= '#FFFFFF', font= ('verdana', 8, 'bold'))
         self.bt_buscar.place(relx=0.3, rely=0.1, relwidth=0.1, relheight=0.15)
 
-        self.bt_novo = Button(self.frame_1, text= 'Novo', bd=2, bg= '#107bd2', fg= '#FFFFFF', font= ('verdana', 8, 'bold'))
+        self.bt_novo = Button(self.frame_1, text= 'Novo', bd=2, bg= '#107bd2', fg= '#FFFFFF', font= ('verdana', 8, 'bold'), command=self.add_cliente)
         self.bt_novo.place(relx=0.6, rely=0.1, relwidth=0.1, relheight=0.15)
 
         self.bt_alterar = Button(self.frame_1, text= 'Alterar', bd=2, bg= '#107bd2', fg= '#FFFFFF', font= ('verdana', 8, 'bold'))
