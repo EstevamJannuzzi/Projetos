@@ -1,7 +1,7 @@
 from openai import OpenAI
 
 client = OpenAI(
-    api_key= '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'
+    api_key= 'sk-guJKj0WyokCujrZBx01sxqnowoLuOD_78Udgb-oh29T3BlbkFJ6YuvRhCQQs0tmbOl1qmj9QdHGs9RnsHjK7iHIryegA'
 )
 
 def enviar_mensagem(pergunta):
